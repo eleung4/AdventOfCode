@@ -1,16 +1,16 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
-
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
+//    fun part1(input: List<String>): Int {
+//        return input.size
+//    }
+//
+//    fun part2(input: List<String>): Int {
+//        return input.size
+//    }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    println(part1(testInput))
-// println((part1(testInput)
+//    val testInput = readInput("Day01_test")
+//    println(part1(testInput))
+//// println((part1(testInput)
 
 
 //    val input = readInput("Day01")
@@ -36,34 +36,71 @@ fun main() {
 fun rockPaperScissors(input: List<String>) : Int {
     var total = 0
     for(line in input) {
-        val you = line.substring(0, 1)
-        val opp = line.substring(2)
-        if(you == "A")
-            total += 1
-        if(you==("B"))
-            total+=2
-        if(you==("C"))
-            total+=3
+        val s = line.substring(2)
+        val opp = line.substring(0, 1)
 
-        if(you=="A" && opp=="X")
-            total+=3
-        if(you=="A" && opp=="Y")
-            total+=6
-        if(you=="A" && opp=="Z")
+        if(s == "X")
             total+=0
-        if(you=="B" && opp=="X")
-            total+=0
-        if(you=="B" && opp=="Y")
+        if(s == "Y")
             total+=3
-        if(you=="B" && opp=="Z")
+        if(s == "Z")
             total+=6
-        if(you=="C" && opp=="X")
-            total+=6
-        if(you=="C" && opp=="Y")
-            total+=0
-        if(you=="C" && opp=="Z")
+        if(opp =="A" && s== "X")
             total+=3
+        if(opp =="A" && s== "Y")
+            total+=1
+        if(opp =="A" && s== "Z")
+            total+=2
+        if(opp =="B" && s== "X")
+            total+=1
+        if(opp =="B" && s== "Y")
+            total+=2
+        if(opp =="B" && s== "Z")
+            total+=3
+        if(opp =="C" && s== "X")
+            total+=2
+        if(opp =="C" && s== "Y")
+            total+=3
+        if(opp =="C" && s== "Z")
+            total+=1
     }
     return total
 
+
+
 }
+
+// x is loss, a rock 1
+//y is draw, b paper 2
+// z is win, c scissors 3
+
+
+//        if(you == "X") //rock, a
+//            total += 1
+//        if(you==("Y")) //paper, b
+//            total+=2
+//        if(you==("Z")) //scissors, c
+//            total+=3
+//
+//        if(you=="X" && opp=="A")
+//            total+=3
+//        if(you=="X" && opp=="B")
+//            total+=0
+//        if(you=="X" && opp=="C")
+//            total+=6
+//        if(you=="Y" && opp=="A")
+//            total+=6
+//        if(you=="Y" && opp=="B")
+//            total+=3
+//        if(you=="Y" && opp=="C")
+//            total+=0
+//        if(you=="Z" && opp=="A")
+//            total+=0
+//        if(you=="Z" && opp=="B")
+//            total+=6
+//        if(you=="Z" && opp=="C")
+//            total+=3
+
+
+//4 8 3   1 5 9  7 2 6
+// 3 4 8   1 5 9   2 6 7
