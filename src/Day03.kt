@@ -7,9 +7,6 @@ fun main() {
 }
 
 
-private fun getCharForNumber(i: Int): Int? {
-    return if (i in 1..26) (i + 64).toChar().toString() else null
-}
 
 fun rucksack(input: List<String>) : Int {
     var total = 0
@@ -20,10 +17,8 @@ fun rucksack(input: List<String>) : Int {
         for(letter in str1) {
             if(str2.contains(letter)) {
                 let = letter.toString()
-                total+= getCharForNumber(let)
+                total+= (let).toInt()
             }
-
-
         }
     }
     return total
